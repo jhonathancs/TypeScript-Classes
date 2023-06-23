@@ -1,39 +1,48 @@
 import './App.css'
 import Book from './components/books'
 import CardList from './components/cardList';
+import Title from './components/title';
 
-const book1 = {
-  title: 'the godfather',
-  pages: 433,
-  isRead: true,
-  isFavorite: true
-};
-const book2 = {
-  title: 'the murder',
-  pages: 422,
-  isRead: false,
-  isFavorite: false
-};
-const book3 = {
-  title: 'the jhoncs',
-  pages: 150,
-  isRead: true,
-  isFavorite: true
-}
+const booksList = [
+  {
+    title: 'the godfather',
+    pages: 433,
+    isRead: true,
+    isFavorite: true
+  },
+  {
+    title: 'the godfather',
+    pages: 433,
+    isRead: true,
+    isFavorite: true
+  },
+  {
+    title: 'the murder',
+    pages: 422,
+    isRead: false,
+    isFavorite: false
+  },
+  {
+    title: 'the jhoncs',
+    pages: 150,
+    isRead: true,
+    isFavorite: true
+  }
+]
+
 
 function App() {
   return (
    <div>
     <h1>🎯Cidades e Livros</h1>
-    <Book 
-      livros={book1}
+    <Title><s>Livros emprestados</s></Title >
+  <>
+  {booksList.map((book) => (
+    <Book livros={book}
+    key={book.title}
     />
-    <Book 
-      livros={book2}
-    />
-    <Book 
-      livros={book3}
-    />
+  ))}
+  </>
    <CardList />
    </div>
   )
