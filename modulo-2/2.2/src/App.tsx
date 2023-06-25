@@ -1,41 +1,22 @@
 import './App.css'
 import Book from './components/books'
 import CardList from './components/cardList';
+import Footer from './components/footer';
+import Header from './components/header';
 import Title from './components/title';
-
-const booksList = [
-  {
-    title: 'the godfather',
-    pages: 433,
-    isRead: true,
-    isFavorite: true
-  },
-  {
-    title: 'the godfather',
-    pages: 433,
-    isRead: true,
-    isFavorite: true
-  },
-  {
-    title: 'the murder',
-    pages: 422,
-    isRead: false,
-    isFavorite: false
-  },
-  {
-    title: 'the jhoncs',
-    pages: 150,
-    isRead: true,
-    isFavorite: true
-  }
-]
-
+import booksList from './data';
 
 function App() {
   return (
    <div>
+    <Header />
+    <br />
+    <br />
     <h1>🎯Cidades e Livros</h1>
-    <Title><s>Livros emprestados</s></Title >
+    <Title>
+    <s>Livros emprestados</s>
+    <h3>Meus Livros</h3>
+    </Title >
   <>
   {booksList.map((book) => (
     <Book livros={book}
@@ -44,6 +25,7 @@ function App() {
   ))}
   </>
    <CardList />
+   <Footer />
    </div>
   )
 }
