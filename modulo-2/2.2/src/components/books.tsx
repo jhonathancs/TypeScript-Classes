@@ -1,3 +1,5 @@
+import '../styles/book.css'
+
 type BookProps = {
 livros:{
     title: string,
@@ -9,8 +11,10 @@ livros:{
 
 function Book({ livros }: BookProps) {
     const {title, pages, isRead, isFavorite} = livros
+    const favoriteClass = isFavorite ? 'favorite-book' : '';
+    
     return(
-        <li>
+        <li className={`book-item ${favoriteClass}`}>
             <span>{isRead ? '🆗' : "⏳"}</span>
             {' '}
             <span>
