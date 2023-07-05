@@ -18,10 +18,10 @@ function App() {
   return (
     <>
       <div>
-      <Button oneClick={() => handleClick1(setcount)}>
+      <Button oneClick={() => handleClick1()}>
       button Somar
       </Button>
-      <Button oneClick={() => handleClick2(setcount)}>
+      <Button oneClick={() => handleClick2()}>
       button Subtrair
       </Button><br /><br />
       TOTAL = {count}
